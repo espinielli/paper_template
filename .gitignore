@@ -124,3 +124,5 @@ $RECYCLE.BIN/
 
 
 #######---- other ----########
+
+**/*.quarto_ipynb

@@ -9,7 +9,13 @@ authors:
     affiliation: Her affiliation
     roles: reviewing
     corresponding: true
-abstract: |
+# use abstract extension for the abstract
+filters:
+  - abstract-section
+bibliography: references.bib
+---
+
+# Abstract
   A paper should be about _**one** idea/problem/question_ (and how you answer it).
   
   An abstract should contain 250 words max and briefly explain:
@@ -20,75 +26,76 @@ abstract: |
   4. Experimental work (done or planned)
   5. Results obtained (or anticipated)
   6. Conclusion (what to do with the results)
-bibliography: references.bib
----
 
 # Introduction
-Length ~1.5-2 pages max.
 
-1. Nature of the problem (motivation/teaser)
-2. (short) Background of previous work (or on what this paper builds)
-3. Purpose and significance of the paper (why your work adds to solve the problem)
-4. Method by which the problem is approached (what type of paper)
-5. Contribution(s) of the paper (stop using ‘organisation of the paper, i.e. section X does x, section Y does y … tell what a reader gets from the paper)
+Length \~1.5-2 pages max.
 
+1.  Nature of the problem (motivation/teaser)
+2.  (short) Background of previous work (or on what this paper builds)
+3.  Purpose and significance of the paper (why your work adds to solve the
+    problem)
+4.  Method by which the problem is approached (what type of paper)
+5.  Contribution(s) of the paper (stop using ‘organisation of the paper, i.e.
+    section X does x, section Y does y … tell what a reader gets from the paper)
 
 # Background
-Length: ~2 pages, 3-4 building blocks, i.e. half a page each.
 
-- what does a reader need to know to understand the work?
-- Could entail literature review and what you do with the findings from it,
-  but also context stuff.
+Length: \~2 pages, 3-4 building blocks, i.e. half a page each.
 
+-   what does a reader need to know to understand the work?
+-   Could entail literature review and what you do with the findings from it,
+    but also context stuff.
 
 # Materials and methods
-This could also be named **System model**.  
-Length: ~2 pages, 3-4 building blocks, i.e. half a page each.
 
-- Normally start with the context/system perspective or research “workflow”,
-  use a diagram to explain the steps
-- Describe data, source, and/or pre-processing steps
-- (if required) what specific method/algorithm the paper uses/applies,
-  put essential math here[^1].
+This could also be named **System model**.\
+Length: \~2 pages, 3-4 building blocks, i.e. half a page each.
 
-[^1]: if it gets too heavy on the math-side, think about putting this in an appendix (unless you submit to a math conference)
+-   Normally start with the context/system perspective or research “workflow”,
+    use a diagram to explain the steps
+-   Describe data, source, and/or pre-processing steps
+-   (if required) what specific method/algorithm the paper uses/applies, put
+    essential math here[^1].
 
-
+[^1]: if it gets too heavy on the math-side, think about putting this in an
+    appendix (unless you submit to a math conference)
 
 ## Results
-Length: ~2 pages, 3-4 building blocks, i.e. half a page each.
 
-- Design the paper to have about 3-4 sub-sections of results to address the
-  findings and hammer home the argument/solution evidence
-- Describe results and then discuss!
-- Check for meaningful visualisations and use annotation to highlight what
-  your text marks as finding/discussion point.  
-  Make sure each figure/table is referenced (minimum once) in the text.
+Length: \~2 pages, 3-4 building blocks, i.e. half a page each.
 
+-   Design the paper to have about 3-4 sub-sections of results to address the
+    findings and hammer home the argument/solution evidence
+-   Describe results and then discuss!
+-   Check for meaningful visualisations and use annotation to highlight what
+    your text marks as finding/discussion point.\
+    Make sure each figure/table is referenced (minimum once) in the text.
 
 # Conclusions
+
 Length: 1 page, each point minimum 1 paragraph, possibly including references.
 
-1. What is shown by the paper and its significance
-2. Limitations and advantages
-3. Application of the results
-4. Recommendation for future/further work
-5. (Potential use/benefit for others, the world, …)
-
+1.  What is shown by the paper and its significance
+2.  Limitations and advantages
+3.  Application of the results
+4.  Recommendation for future/further work
+5.  (Potential use/benefit for others, the world, …)
 
 # Acknowledgment
+
 If appropriate
 
 # Appendices
+
 If appropriate
 
-
 # References {.unnumbered}
-Make sure to turn a paper not into a journal article or thesis … 
-if there are more than 15 references think about whether the paper tackles
-“1” relevant problem … unless it is a literature review discussion 😉
-[@knuth84] is the master.
+
+Make sure to turn a paper not into a journal article or thesis … if there are
+more than 15 references think about whether the paper tackles “1” relevant
+problem … unless it is a literature review discussion 😉 [@knuth84] is the
+master.
 
 ::: {#refs}
 :::
-
