@@ -1,0 +1,48 @@
+---
+acronyms:
+  keys:
+    - shortname: ADS-B
+      longname: Automatic Dependent Surveillance–Broadcast
+    - shortname: ATC
+      longname: Air Traffic Control
+    - shortname: ATFCM
+      longname: Air Traffic Flow and Capacity Management
+    - shortname: EASA
+      longname: European Union Aviation Safety Agency
+    - shortname: ECAC
+      longname: European Civil Aviation Conference
+    - shortname: ECtrl
+      longname: EUROCONTROL
+    - shortname: EC
+      longname: European Commission
+    - shortname: EU
+      longname: European Union
+    - shortname: FIR
+      longname: Flight Information Region
+    - shortname: FP
+      longname: Flight Plan
+    - shortname: IFR
+      longname: Instrument Flight Rules
+    - shortname: ITU
+      longname: International Telecommunication Union
+    - shortname: GA
+      longname: General Aviation
+    - shortname: IATA
+      longname: International Air Transport Association
+    - shortname: ICAO
+      longname: International Civil Aviation Organization
+    - shortname: ISO
+      longname: International Organization for Standardization
+    - shortname: LCC
+      longname: Low-Cost Carriers
+    - shortname: NM
+      longname: Network Manager
+    - shortname: OSN
+      longname: OpenSky Network
+    - shortname: TMA
+      longname: Terminal Maneuvering Area
+    - shortname: VFR
+      longname: Visual Flight Rules
+    - shortname: LEO
+      longname: Low Earth Orbit
+---

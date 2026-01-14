@@ -1,17 +1,57 @@
 project:
-  type: manuscript
+  render:
+    - index.qmd
 
-manuscript:
-  article: index.qmd
+# for UTF8 support in LaTeX
+pdf-engine: xelatex
+
 bibliography: "references.bib"
 format:
-  html:
+  ieee-pdf:
+    keep-tex: true
+    colorlinks: false
+    # fig-pos: 'H'
+    journaltype: conference
+    template-partials:
+      - media/title.tex
+      - media/author.tex
+    papersize: a4
+    include-in-header:
+      - file: media/preamble.tex
+    include-before-body:
+      - text: |
+          \let\qty\SI
+          % NOTE: make siunitx's \qty work without clashing with 
+          %      the one in physics
+  ieee-html: 
+    html-math-method: mathjax
+    include-in-header:
+      file: media/siunitx.html
     comments:
       hypothesis: true
   # typst: default
 
   # (other formats)
   # pdf: default
+
+# use abstract extension for the abstract
+filters:
+  - abstract-section
+  - highlight-text
+  - acronyms
+
+acronyms:
+  # insert acronyms from first cited, whithout LoA section
+  insert_loa: false
+  fromfile:
+    - ./media/acronyms.yml
+
+crossref:
+  eq-prefix: ""
+  fig-prefix: Fig.   # (default is "Figure")
+  fig-title: Fig.
+  # tbl-prefix: table    # (default is "Table")
+  ref-hyperlink: false # (default is true)
 
 execute:
   freeze: true

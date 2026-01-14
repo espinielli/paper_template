@@ -1,18 +1,40 @@
 ---
 title: "A glorious title"
-authors:
-  - name: Forename1 Surename1
-    affiliation: Your affiliation
-    roles: writing
-    corresponding: false
-  - name: Forename2 Surename2
-    affiliation: Her affiliation
-    roles: reviewing
-    corresponding: true
-# use abstract extension for the abstract
-filters:
-  - abstract-section
-bibliography: references.bib
+author:
+  - id: jd
+    name: John Doe
+    affiliations:
+      - ref: stark
+    orcid: 0000-0001-4567-8976
+    email: john.doe@foo.bar
+    attributes:
+      corresponding: true
+    role: 
+      - conceptualization
+      - writing
+      - software
+  - name: Jane Bloggs
+    affiliations:
+      - ref: acme
+    orcid: 0000-0001-1234-1234
+    email: j.bloggs.goens@acme.com
+    role: 
+      - editing
+affiliations:
+  - id: stark
+    name: Stark Industries
+    department: Safe Explosive
+    city: Boom City
+    country: UK
+  - id: acme
+    name: ACME
+    department: Best Tricks
+    city: Los Angeles
+    country: USA
+  - id: empty
+keywords: 
+    - explosives
+    - bomb
 ---
 
 # Abstract
@@ -38,6 +60,25 @@ Length \~1.5-2 pages max.
 4.  Method by which the problem is approached (what type of paper)
 5.  Contribution(s) of the paper (stop using ‘organisation of the paper, i.e.
     section X does x, section Y does y … tell what a reader gets from the paper)
+6. Use acronyms like `\acr{ICAO}` to get "\acr{ICAO}"".
+7. If needed in paper preparation or production, you can highlight text
+   like [this]{colour="#b22222" bg-colour="#abc123"}.
+
+A reference to @fig-forecast.
+
+
+::: {#fig-forecast}
+```{r chunk-name-with-dashes}
+#| out-width: "100%"
+#| echo: false
+#| fig-scap: "Placeholder"
+knitr::include_graphics("media/placeholder.jpg")
+```
+
+A long caption with formula $E = m c^2$.
+:::
+
+
 
 # Background
 
@@ -57,6 +98,61 @@ Length: \~2 pages, 3-4 building blocks, i.e. half a page each.
 -   Describe data, source, and/or pre-processing steps
 -   (if required) what specific method/algorithm the paper uses/applies, put
     essential math here[^1].
+
+Followed by an example of a reference to a table, see @tbl-megaconstellations.
+
+```{r}
+#| label: tbl-megaconstellations
+#| tbl-cap: Mega-constellations (planned > 1000) as per filing to the \acr{ITU}
+#| tbl-cap-location: bottom
+
+library(tibble)
+library(gt)
+
+megas <- tibble::tribble(
+  ~constellation , ~state , ~launched , ~active , ~planned , ~first_launch ,
+  "Starlink"     , "US"   ,      4714 ,    3521 ,     4714 ,          2018 ,
+  "Starlink2A"   , "US"   ,      3689 ,    3070 ,     6720 ,          2022 ,
+  "Starlink2"    , "US"   ,         0 ,       0 ,    30456 , NA            ,
+  "OneWeb"       , "UK"   ,       660 ,     635 ,      716 ,          2019 ,
+  "OneWeb2"      , "UK"   ,         0 ,       0 ,     2304 , NA            ,
+  "Kuiper"       , "US"   ,        29 ,      27 ,     3232 ,          2023 ,
+  "StarShield"   , "US"   ,       193 ,     126 ,       32 ,          2022 ,
+  "Xingwang"     , "CN"   ,        50 ,      10 ,      996 ,          2021 ,
+  "Qianfan"      , "CN"   ,        90 ,      28 ,       32 ,          2024 ,
+  "Guangwang"    , "CN"   ,         0 ,       0 ,    12992 , NA            ,
+  "Yinhe"        , "CN"   ,         8 ,       7 ,     1000 ,          2020 ,
+  "Hanwha"       , "KR"   ,         0 ,       0 ,     2000 , NA            ,
+  "Lynk"         , "US"   ,        10 ,       6 ,     2000 ,          2020 ,
+  "Astra"        , "US"   ,         0 ,       0 ,    13620 , NA            ,
+  "Telesat"      , "CA"   ,         0 ,       0 ,      300 , NA            ,
+  "HVNET"        , "US"   ,         0 ,       0 ,     1440 , NA            ,
+  "SpinLaunch"   , "US"   ,         0 ,       0 ,     1190 , NA            ,
+  "Globalstar3"  , "DE"   ,         0 ,       0 ,     3080 , NA            ,
+  "Honghu-3"     , "CN"   ,         0 ,       0 ,    10000 , NA            ,
+  "Semaphore"    , "FR"   ,         0 ,       0 ,   116640 , NA            ,
+  "E-Space"      , "US"   ,         4 ,       0 ,   337323 ,          2022
+)
+
+# ~constellation, ~state, ~launched, ~active, ~planned, ~first_launch,
+megas |>
+  gt() |>
+  cols_label(
+    constellation ~ "Constellation",
+    state ~ "Country",
+    launched ~ "Launched",
+    active ~ "Active",
+    planned ~ "Planned",
+    first_launch ~ "First launch"
+  ) |>
+  sub_missing(
+    columns = "first_launch",
+    missing_text = "-"
+  ) |>
+  opt_table_font(size = "10px")
+
+```
+
 
 [^1]: if it gets too heavy on the math-side, think about putting this in an
     appendix (unless you submit to a math conference)
