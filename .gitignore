@@ -1,6 +1,6 @@
 # undo global settings
 !*
-
+index.tex
 ######## R project specific (R.gitignore)
 # from https://github.com/github/gitignore/
 # History files
