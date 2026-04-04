@@ -47,7 +47,7 @@ acronyms:
     - ./media/acronyms.yml
 
 crossref:
-  eq-prefix: ""
+  eq-prefix: "Eq."
   fig-prefix: Fig.   # (default is "Figure")
   fig-title: Fig.
   # tbl-prefix: table    # (default is "Table")
